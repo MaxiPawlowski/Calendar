@@ -1,2 +1,2 @@
 # Calendar
-A calendar made in React/Redux saga.
+A calendar made in React/Redux thunk.
