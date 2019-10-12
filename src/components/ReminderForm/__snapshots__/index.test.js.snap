@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App when rendered should render correctly 1`] = `
+<form
+  className="ReminderForm-root-1"
+  onSubmit={[Function]}
+>
+  <WithStyles(ForwardRef(TextField))
+    id="title"
+    label="Title"
+    margin="normal"
+    onChange={[Function]}
+    value=""
+  />
+  <MuiPickersUtilsProvider
+    utils={[Function]}
+  >
+    <PickerWithState
+      allowKeyboardControl={true}
+      ampm={true}
+      invalidDateMessage="Invalid Date Format"
+      maxDate={2100-01-01T00:00:00.000Z}
+      maxDateMessage="Date should not be after maximal date"
+      minDate={1900-01-01T00:00:00.000Z}
+      minDateMessage="Date should not be before minimal date"
+      onChange={[Function]}
+      openTo="date"
+      orientation="portrait"
+      showTabs={true}
+      value={2017-02-14T12:51:48.000Z}
+      views={
+        Array [
+          "year",
+          "date",
+          "hours",
+          "minutes",
+        ]
+      }
+      wider={true}
+    />
+  </MuiPickersUtilsProvider>
+  <WithStyles(ForwardRef(TextField))
+    InputLabelProps={
+      Object {
+        "shrink": true,
+      }
+    }
+    id="color"
+    label="Color"
+    margin="normal"
+    onChange={[Function]}
+    type="color"
+    value=""
+  />
+  <WithStyles(ForwardRef(TextField))
+    id="city"
+    label="City"
+    margin="normal"
+    onChange={[Function]}
+    value=""
+  />
+  <WithStyles(ForwardRef(Button))
+    color="primary"
+    type="submit"
+    variant="contained"
+  >
+    Submit
+  </WithStyles(ForwardRef(Button))>
+</form>
+`;

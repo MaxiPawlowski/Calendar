@@ -1,9 +1,9 @@
 import { createStyles } from '@material-ui/core';
 
-export default (theme) => 
+export default () => 
   createStyles({
-    root: {
+    root:{
       display: 'flex',
-      padding: theme.spacing(1),
+      flexDirection: 'column'
     },
   });
