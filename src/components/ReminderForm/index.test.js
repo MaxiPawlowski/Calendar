@@ -5,7 +5,7 @@ import ReminderForm from "./index";
 describe('App', () => {
   const mockedDate = 1487076708000;
   let wrapper;
-
+  
   describe('when rendered', () => {
     beforeAll(() => {
       Date.now = jest.fn(() => mockedDate)

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import { Button } from "@material-ui/core";
 import { withStyles } from '@material-ui/styles';
@@ -8,18 +8,7 @@ import { MuiPickersUtilsProvider, DateTimePicker } from '@material-ui/pickers';
 import styles from "./styles";
 
 const ReminderForm = ({ classes, prevValues, handleSave }) => {
-  const [values, setValues] = useState({
-    title: '',
-    color: '',
-    date: new Date(Date.now()),
-    city: ''
-  });
-
-  useEffect(() => {
-    if (prevValues) {
-      setValues(prevValues);
-    }
-  }, [prevValues]);
+  const [values, setValues] = useState(prevValues);
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
@@ -84,7 +73,12 @@ ReminderForm.propTypes = {
 };
 
 ReminderForm.defaultProps = {
-  prevValues : false,
+  prevValues: {
+    title: '',
+    color: '',
+    date: new Date(Date.now()),
+    city: ''
+  },
 }
 
 export default withStyles(styles)(ReminderForm);
