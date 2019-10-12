@@ -8,7 +8,6 @@ describe('App', () => {
   
   describe('when rendered', () => {
     beforeAll(() => {
-      Date.now = jest.fn(() => mockedDate)
       wrapper = shallow(<ReminderForm handleSave={() => {}} />);
     });
 
