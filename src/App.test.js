@@ -1,10 +1,17 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import App from './App';
 
 describe('App', () => {
-  it('Renders without crashing', () => {
-    const rendered = renderer.create(<App />).toJSON();
-    expect(rendered).toBeTruthy();
+  describe('when rendered', () => {
+    let wrapper;
+
+    beforeAll(() => {
+      wrapper = shallow(<App />);
+    });
+
+    it('should render correctly', () => {
+      expect(wrapper).toBeTruthy();
+    });
   });
 });
