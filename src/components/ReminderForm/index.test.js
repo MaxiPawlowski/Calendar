@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import ReminderForm from "./index";
 
-describe('App', () => {
+describe('ReminderForm', () => {
   const mockedDate = 1487076708000;
   let wrapper;
   
@@ -27,7 +27,7 @@ describe('App', () => {
       wrapper.find('form').simulate('submit', { preventDefault() { } });
       expect(handleSave).toHaveBeenCalledWith({
         title: '',
-        color: '',
+        color: '#7fffff',
         date: new Date(mockedDate),
         city: ''
       });

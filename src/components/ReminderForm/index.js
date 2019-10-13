@@ -11,12 +11,21 @@ const ReminderForm = ({ classes, prevValues, handleSave }) => {
   const [values, setValues] = useState(prevValues);
 
   const handleChange = name => event => {
-    setValues({ ...values, [name]: event.target.value });
+    setValues({
+      ...values,
+      [name]: name === 'title' ? event.target.value.substring(0, 30) : event.target.value
+    });
   };
 
   const handleSubmit = event => {
     event.preventDefault();
     handleSave(values);
+    setValues({
+      title: '',
+      color: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+      date: new Date(Date.now()),
+      city: ''
+    });
   }
 
   return (
@@ -27,10 +36,17 @@ const ReminderForm = ({ classes, prevValues, handleSave }) => {
         value={values.title}
         onChange={handleChange('title')}
         margin="normal"
+        required
       />
+
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <DateTimePicker value={values.date} onChange={(date) => handleChange('date')({target:{value:date}})} />
+        <DateTimePicker
+          required
+          value={values.date}
+          onChange={(date) => handleChange('date')({target:{value:date}})}
+        />
       </MuiPickersUtilsProvider>
+
       <TextField
         id="color"
         label="Color"
@@ -42,6 +58,7 @@ const ReminderForm = ({ classes, prevValues, handleSave }) => {
           shrink: true,
         }}
       />
+
       <TextField
         id="city"
         label="City"
@@ -49,6 +66,7 @@ const ReminderForm = ({ classes, prevValues, handleSave }) => {
         onChange={handleChange('city')}
         margin="normal"
       />
+
       <Button variant="contained" color="primary" type="submit">
         Submit
       </Button>
@@ -75,7 +93,7 @@ ReminderForm.propTypes = {
 ReminderForm.defaultProps = {
   prevValues: {
     title: '',
-    color: '',
+    color: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
     date: new Date(Date.now()),
     city: ''
   },
