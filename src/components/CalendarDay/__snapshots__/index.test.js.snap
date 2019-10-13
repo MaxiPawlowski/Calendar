@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CalendarDay when rendered should render correctly 1`] = `
+<div
+  className="ReminderForm-root-1"
+>
+  14
+  <div
+    className="ReminderForm-dotContainer-3"
+  />
+</div>
+`;

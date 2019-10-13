@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App when rendered should render correctly 1`] = `
+exports[`ReminderForm when rendered should render correctly 1`] = `
 <form
   className="ReminderForm-root-1"
   onSubmit={[Function]}
@@ -10,6 +10,7 @@ exports[`App when rendered should render correctly 1`] = `
     label="Title"
     margin="normal"
     onChange={[Function]}
+    required={true}
     value=""
   />
   <MuiPickersUtilsProvider
@@ -26,6 +27,7 @@ exports[`App when rendered should render correctly 1`] = `
       onChange={[Function]}
       openTo="date"
       orientation="portrait"
+      required={true}
       showTabs={true}
       value={2017-02-14T12:51:48.000Z}
       views={
@@ -50,7 +52,7 @@ exports[`App when rendered should render correctly 1`] = `
     margin="normal"
     onChange={[Function]}
     type="color"
-    value=""
+    value="#7fffff"
   />
   <WithStyles(ForwardRef(TextField))
     id="city"

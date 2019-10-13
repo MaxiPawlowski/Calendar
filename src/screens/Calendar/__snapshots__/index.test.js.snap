@@ -4,8 +4,54 @@ exports[`App when rendered should render correctly 1`] = `
 <div
   className="Calendar-root-1"
 >
+  <div
+    className="Calendar-sidebar-2"
+  >
+    <WithStyles(ReminderForm)
+      handleSave={[Function]}
+    />
+    <MuiPickersUtilsProvider
+      utils={[Function]}
+    >
+      <PickerWithState
+        allowKeyboardControl={true}
+        invalidDateMessage="Invalid Date Format"
+        label="Calendar Date"
+        maxDate={2100-01-01T00:00:00.000Z}
+        maxDateMessage="Date should not be after maximal date"
+        minDate={1900-01-01T00:00:00.000Z}
+        minDateMessage="Date should not be before minimal date"
+        onChange={[Function]}
+        openTo="year"
+        value={2019-10-01T03:00:00.000Z}
+        views={
+          Array [
+            "year",
+            "month",
+          ]
+        }
+      />
+    </MuiPickersUtilsProvider>
+  </div>
   <WithStyles(ReminderForm)
-    handleSave={[Function]}
+    calendarDate={
+      Object {
+        "month": 10,
+        "year": 2019,
+      }
+    }
+    handleDayExpand={[Function]}
+    reminders={Array []}
+  />
+  <WithStyles(RemindersDialog)
+    data={
+      Object {
+        "date": 2017-02-14T12:51:48.000Z,
+        "reminders": Array [],
+      }
+    }
+    handleClose={[Function]}
+    open={false}
   />
 </div>
 `;

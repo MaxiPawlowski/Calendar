@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RemindersDialog when rendered should render correctly 1`] = `
+<WithStyles(ForwardRef(Dialog))
+  onClose={[Function]}
+  open={false}
+>
+  <WithStyles(ForwardRef(DialogTitle))>
+    Reminders for 
+    02/14/2017
+  </WithStyles(ForwardRef(DialogTitle))>
+  <div
+    className="RemindersDialog-body-1"
+  />
+</WithStyles(ForwardRef(Dialog))>
+`;
