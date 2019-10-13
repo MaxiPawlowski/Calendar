@@ -2,11 +2,11 @@
 
 exports[`CalendarDay when rendered should render correctly 1`] = `
 <div
-  className="ReminderForm-root-1"
+  className="CalendarDay-root-1"
 >
   14
   <div
-    className="ReminderForm-dotContainer-3"
+    className="CalendarDay-dotContainer-3"
   />
 </div>
 `;

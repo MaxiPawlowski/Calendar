@@ -33,4 +33,5 @@ export const dateToCalendar = date => ({
   month: date.getMonth()+1,
 })
 
-export const calendarToDate = date => new Date(`${date.month}/1/${date.year}`)
+export const firstDateOfCalendar = date => new Date(`${date.month}/1/${date.year}`)
+export const lastDateOfCalendar = date => new Date(`${date.month}/${daysInMonth(date)}/${date.year}`)

@@ -1,14 +1,21 @@
 import React from "react";
 import CalendarDay from 'components/CalendarDay'
 import { withStyles } from '@material-ui/styles';
-import { addDays, compareDates, daysInMonth, daysName } from "utils/date"
+import {
+  addDays,
+  compareDates,
+  daysInMonth,
+  daysName,
+  lastDateOfCalendar,
+  firstDateOfCalendar
+} from "utils/date"
 import PropTypes from 'prop-types';
 import styles from "./styles";
 
 const ReminderForm = ({ classes, reminders, calendarDate, handleDayExpand }) => {
   const days = [];
-  const firstItemDate = new Date(`${calendarDate.month}/1/${calendarDate.year}`);
-  const lastItemDate = new Date(`${calendarDate.month}/${daysInMonth(calendarDate)}/${calendarDate.year}`);
+  const firstItemDate = firstDateOfCalendar(calendarDate);
+  const lastItemDate = lastDateOfCalendar(calendarDate);
 
   for (let i = 1; i <= firstItemDate.getDay(); i++) {
     days.unshift(
