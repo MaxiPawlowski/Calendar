@@ -7,7 +7,7 @@ import ReminderForm from 'components/ReminderForm';
 import CalendarComponent from 'components/Calendar';
 import RemindersDialog from 'components/RemindersDialog';
 import { MuiPickersUtilsProvider, DatePicker } from '@material-ui/pickers';
-import { dateToCalendar, calendarToDate } from "utils/date"
+import { dateToCalendar, firstDateOfCalendar } from "utils/date"
 import DateFnsUtils from '@date-io/date-fns';
 import styles from './styles'
 
@@ -58,7 +58,7 @@ class Calendar extends Component {
               openTo="year"
               views={["year", "month"]}
               label="Calendar Date"
-              value={calendarToDate(calendarDate)}
+              value={firstDateOfCalendar(calendarDate)}
               onChange={(date) => changeDate(dateToCalendar(date))}
             />
           </MuiPickersUtilsProvider>

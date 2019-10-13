@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import styles from "./styles";
 
-const ReminderForm = ({ classes, date, reminders, handleDayExpand }) => (
+const CalendarDay = ({ classes, date, reminders, handleDayExpand }) => (
   <div className={classes.root}>
     {date.getDate()}
     <div className={classes.dotContainer}>
@@ -24,7 +24,7 @@ const ReminderForm = ({ classes, date, reminders, handleDayExpand }) => (
   </div>
 );
 
-ReminderForm.propTypes = {
+CalendarDay.propTypes = {
   classes: PropTypes.shape({
     root: PropTypes.string.isRequired,
     button: PropTypes.string.isRequired,
@@ -44,8 +44,8 @@ ReminderForm.propTypes = {
   handleDayExpand: PropTypes.func,
 };
 
-ReminderForm.defaultProps = {
+CalendarDay.defaultProps = {
   handleDayExpand: () => {},
 }
 
-export default withStyles(styles)(ReminderForm);
+export default withStyles(styles)(CalendarDay);
