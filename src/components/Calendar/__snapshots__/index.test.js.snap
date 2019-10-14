@@ -58,186 +58,217 @@ exports[`Calendar when rendered should render correctly 1`] = `
   />
   <WithStyles(CalendarDay)
     date={2019-10-01T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="2"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-02T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="3"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-03T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="4"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-04T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="5"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-05T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="6"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-06T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="7"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-07T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="8"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-08T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="9"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-09T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="10"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-10T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="11"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-11T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="12"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-12T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="13"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-13T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="14"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-14T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="15"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-15T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="16"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-16T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="17"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-17T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="18"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-18T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="19"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-19T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="20"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-20T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="21"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-21T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="22"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-22T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="23"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-23T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="24"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-24T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="25"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-25T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="26"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-26T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="27"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-27T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="28"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-28T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="29"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-29T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="30"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-30T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="31"
     reminders={Array []}
   />
   <WithStyles(CalendarDay)
     date={2019-10-31T03:00:00.000Z}
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     key="32"
     reminders={Array []}

@@ -54,12 +54,30 @@ exports[`ReminderForm when rendered should render correctly 1`] = `
     type="color"
     value="#7fffff"
   />
-  <WithStyles(ForwardRef(TextField))
-    id="city"
-    label="City"
-    margin="normal"
-    onChange={[Function]}
-    value=""
+  <default_1$1
+    autoActivateFirstSuggest={false}
+    className="ReminderForm-geoSuggest-2"
+    disabled={false}
+    fixtures={Array []}
+    getSuggestLabel={[Function]}
+    highlightMatch={true}
+    ignoreEnter={false}
+    ignoreTab={false}
+    initialValue=""
+    inputClassName="ReminderForm-geoInput-3 MuiInputBase-input MuiInput-input"
+    maxFixtures={10}
+    minLength={1}
+    onKeyDown={[Function]}
+    onKeyPress={[Function]}
+    onSuggestSelect={[Function]}
+    placeholder="City"
+    queryDelay={250}
+    skipSuggest={[Function]}
+    style={Object {}}
+    suggestItemActiveClassName="ReminderForm-suggestItemActive-5"
+    suggestItemClassName="ReminderForm-suggestItem-4"
+    suggestsClassName="ReminderForm-suggestList-6"
+    suggestsHiddenClassName="ReminderForm-suggestListHidden-7"
   />
   <WithStyles(ForwardRef(Button))
     color="primary"

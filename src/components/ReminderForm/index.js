@@ -1,33 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import { Button } from "@material-ui/core";
 import { withStyles } from '@material-ui/styles';
 import PropTypes from 'prop-types';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, DateTimePicker } from '@material-ui/pickers';
+import Geosuggest from 'react-geosuggest';
 import styles from "./styles";
 
-const ReminderForm = ({ classes, prevValues, handleSave }) => {
-  const [values, setValues] = useState(prevValues);
+const randomHexColor = () => '#' + (Math.random() * 0xFFFFFF << 0).toString(16)
 
+const ReminderForm = ({ classes, prevValues, handleSave }) => {
+  const geoInput = useRef(null);
+  const [values, setValues] = useState({
+    title: '',
+    color: randomHexColor(),
+    date: new Date(Date.now()),
+    city: ''
+  });
   const handleChange = name => event => {
     setValues({
       ...values,
       [name]: name === 'title' ? event.target.value.substring(0, 30) : event.target.value
     });
   };
-
   const handleSubmit = event => {
     event.preventDefault();
     handleSave(values);
+    if (geoInput.current && geoInput.current.clear){
+      geoInput.current.clear()
+    }
     setValues({
       title: '',
-      color: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+      color: randomHexColor(),
       date: new Date(Date.now()),
       city: ''
     });
   }
-
+  
+  useEffect(() => {
+    if (prevValues){
+      setValues({ ...prevValues})
+    }
+  }, [prevValues])
+  
   return (
     <form className={classes.root} onSubmit={handleSubmit}>
       <TextField
@@ -59,12 +75,28 @@ const ReminderForm = ({ classes, prevValues, handleSave }) => {
         }}
       />
 
-      <TextField
-        id="city"
-        label="City"
-        value={values.city}
-        onChange={handleChange('city')}
-        margin="normal"
+      <Geosuggest
+        inputClassName={classes.geoInput + ' MuiInputBase-input MuiInput-input'}
+        suggestItemClassName={classes.suggestItem}
+        suggestItemActiveClassName={classes.suggestItemActive}
+        suggestsClassName={classes.suggestList}
+        suggestsHiddenClassName={classes.suggestListHidden}
+        className={classes.geoSuggest}
+        initialValue={values.city ? values.city.description: undefined}
+        ref={geoInput}
+        placeholder="City"
+        onSuggestSelect={(params) => {          
+          if (params){
+            handleChange('city')({ 
+              target: {
+                value: {
+                  location: params.location,
+                  description: params.description,
+                } 
+              } 
+            })
+          }
+        }}
       />
 
       <Button variant="contained" color="primary" type="submit">
@@ -77,26 +109,38 @@ const ReminderForm = ({ classes, prevValues, handleSave }) => {
 ReminderForm.propTypes = {
   classes: PropTypes.shape({
     root: PropTypes.string.isRequired,
+    geoSuggest: PropTypes.string.isRequired,
+    geoInput: PropTypes.string.isRequired,
+    suggestItem: PropTypes.string.isRequired,
+    suggestItemActive: PropTypes.string.isRequired,
+    suggestList: PropTypes.string.isRequired,
+    suggestListHidden: PropTypes.string.isRequired,
   }).isRequired,
+
   prevValues: PropTypes.oneOfType([
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       color: PropTypes.string.isRequired,
       date: PropTypes.instanceOf(Date).isRequired,
-      city: PropTypes.string.isRequired
+      id: PropTypes.number,
+      city: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.shape({
+          description: PropTypes.string.isRequired,
+          location: PropTypes.shape({
+            lat: PropTypes.number.isRequired,
+            lng: PropTypes.number.isRequired,
+          })
+        }),
+      ]),
     }),
-    PropTypes.bool
+    PropTypes.bool,
   ]),
   handleSave: PropTypes.func.isRequired
 };
 
 ReminderForm.defaultProps = {
-  prevValues: {
-    title: '',
-    color: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
-    date: new Date(Date.now()),
-    city: ''
-  },
+  prevValues: false,
 }
 
 export default withStyles(styles)(ReminderForm);

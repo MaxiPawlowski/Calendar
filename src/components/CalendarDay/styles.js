@@ -14,6 +14,14 @@ export default () =>
       flexDirection: 'column',
       justifyContent: 'space-between'
     },
+    typography:{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'space-between',
+    },
+    icon:{
+      cursor: 'pointer',
+    },
     button:{
       padding: '0px',
       justifyContent: 'flex-start',

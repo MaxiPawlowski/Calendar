@@ -43,7 +43,8 @@ describe('ReminderForm', () => {
           handleSave={handleSave}
           prevValues={{
             title: 'test title',
-            color: '#FFF',
+            color: '#FFFFFF',
+            id: Date.now(),
             date: new Date(mockedDate),
             city: 'test city'
           }}
@@ -55,7 +56,8 @@ describe('ReminderForm', () => {
       wrapper.find('form').simulate('submit', { preventDefault() { } });
       expect(handleSave).toHaveBeenCalledWith({
         title: 'test title',
-        color: '#FFF',
+        color: '#FFFFFF',
+        id: Date.now(),
         date: new Date(mockedDate),
         city: 'test city'
       });

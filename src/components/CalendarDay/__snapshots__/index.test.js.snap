@@ -4,9 +4,13 @@ exports[`CalendarDay when rendered should render correctly 1`] = `
 <div
   className="CalendarDay-root-1"
 >
-  14
+  <WithStyles(ForwardRef(Typography))
+    className="CalendarDay-typography-2"
+  >
+    14
+  </WithStyles(ForwardRef(Typography))>
   <div
-    className="CalendarDay-dotContainer-3"
+    className="CalendarDay-dotContainer-5"
   />
 </div>
 `;

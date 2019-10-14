@@ -1,23 +1,22 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import RemindersDialog from "./index";
+import ReminderItem from "./index";
 
-describe('RemindersDialog', () => {
+describe('ReminderItem', () => {
   let wrapper;
 
   describe('when rendered', () => {
     beforeAll(() => {
       wrapper = shallow(
-        <RemindersDialog
-          handleClose={() => { }}
-          getWeatherFromReminders={() => { }}
-          deleteReminder={() => { }}
-          editReminder={() => { }}
-          open={false}
-          data={{
-            weathers:[],
-            reminders:[],
+        <ReminderItem
+          editReminder={()=>{}}
+          deleteReminder={()=>{}}
+          reminder={{
+            title: "test",
+            color: "#246751",
             date: new Date(Date.now()),
+            city: "",
+            id: 1571083793866
           }}
         />
       );

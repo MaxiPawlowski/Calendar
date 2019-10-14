@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReminderItem when rendered should render correctly 1`] = `
+<div
+  className="ReminderItem-container-1"
+  style={
+    Object {
+      "background": "rgba(36, 103, 81, 0.4)",
+      "border": "1px solid #246751",
+    }
+  }
+>
+  <div>
+    <WithStyles(ForwardRef(Typography))
+      className="ReminderItem-typography-4"
+    >
+      09:51 - test
+    </WithStyles(ForwardRef(Typography))>
+  </div>
+  <div
+    className="ReminderItem-iconsContainer-3"
+    style={Object {}}
+  >
+    <pure(EditOutlinedIcon)
+      className="ReminderItem-icon-2"
+      onClick={[Function]}
+    />
+    <pure(DeleteForeverOutlinedIcon)
+      className="ReminderItem-icon-2"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;

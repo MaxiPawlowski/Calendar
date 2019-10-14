@@ -10,7 +10,11 @@ describe('App', () => {
       wrapper = shallow(
         <Calendar
           reminders={[]}
+          weathers={[]}
           addReminder={()=>{}}
+          removeReminders={()=>{}}
+          getWeathers={()=>{}}
+          editReminder={()=>{}}
           changeDate={()=>{}}
           calendarDate={{
             year: 2019,
