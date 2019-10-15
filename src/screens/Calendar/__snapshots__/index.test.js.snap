@@ -40,6 +40,7 @@ exports[`App when rendered should render correctly 1`] = `
         "year": 2019,
       }
     }
+    deleteReminder={[Function]}
     handleDayExpand={[Function]}
     reminders={Array []}
   />
@@ -48,8 +49,12 @@ exports[`App when rendered should render correctly 1`] = `
       Object {
         "date": 2017-02-14T12:51:48.000Z,
         "reminders": Array [],
+        "weathers": Array [],
       }
     }
+    deleteReminder={[Function]}
+    editReminder={[Function]}
+    getWeatherFromReminders={[Function]}
     handleClose={[Function]}
     open={false}
   />

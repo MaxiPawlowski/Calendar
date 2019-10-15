@@ -1,12 +1,16 @@
 import React from "react";
 import { withStyles } from '@material-ui/styles';
-import { Button } from '@material-ui/core';
+import { Button, Typography} from '@material-ui/core';
 import PropTypes from 'prop-types';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import styles from "./styles";
 
-const CalendarDay = ({ classes, date, reminders, handleDayExpand }) => (
+const CalendarDay = ({ classes, date, reminders, handleDayExpand, deleteReminder }) => (
   <div className={classes.root}>
-    {date.getDate()}
+    <Typography className={classes.typography}>
+      {date.getDate()}
+      {reminders.length > 0 && <DeleteForeverIcon className={classes.icon} onClick={() => deleteReminder(reminders)} />}
+    </Typography>
     <div className={classes.dotContainer}>
       {reminders.map(({ color }, index) => (
         <div
@@ -27,7 +31,9 @@ const CalendarDay = ({ classes, date, reminders, handleDayExpand }) => (
 CalendarDay.propTypes = {
   classes: PropTypes.shape({
     root: PropTypes.string.isRequired,
+    typography: PropTypes.string.isRequired,
     button: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
     dotContainer: PropTypes.string.isRequired,
     reminderDot: PropTypes.string.isRequired,
   }).isRequired,
@@ -38,14 +44,26 @@ CalendarDay.propTypes = {
     title: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
     date: PropTypes.instanceOf(Date).isRequired,
-    city: PropTypes.string.isRequired
+    id: PropTypes.number.isRequired,
+    city: PropTypes.oneOfType([
+      PropTypes.string.isRequired,
+      PropTypes.shape({
+        description: PropTypes.string.isRequired,
+        location: PropTypes.shape({
+          lat: PropTypes.number.isRequired,
+          lng: PropTypes.number.isRequired,
+        }).isRequired
+      }),
+    ]),
   })).isRequired,
 
   handleDayExpand: PropTypes.func,
+  deleteReminder: PropTypes.func,
 };
 
 CalendarDay.defaultProps = {
   handleDayExpand: () => {},
+  deleteReminder: () => {},
 }
 
 export default withStyles(styles)(CalendarDay);

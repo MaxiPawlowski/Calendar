@@ -11,6 +11,7 @@ describe('Calendar', () => {
         <Calendar
           reminders={[]}
           handleDayExpand={()=>{}}
+          deleteReminder={()=>{}}
           calendarDate={{
             year: 2019,
             month: 10

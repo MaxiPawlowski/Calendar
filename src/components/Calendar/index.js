@@ -12,7 +12,7 @@ import {
 import PropTypes from 'prop-types';
 import styles from "./styles";
 
-const ReminderForm = ({ classes, reminders, calendarDate, handleDayExpand }) => {
+const ReminderForm = ({ classes, reminders, calendarDate, handleDayExpand, deleteReminder }) => {
   const days = [];
   const firstItemDate = firstDateOfCalendar(calendarDate);
   const lastItemDate = lastDateOfCalendar(calendarDate);
@@ -32,6 +32,7 @@ const ReminderForm = ({ classes, reminders, calendarDate, handleDayExpand }) => 
     days.push(
       <CalendarDay
         key={days.length}
+        deleteReminder={deleteReminder}
         handleDayExpand={handleDayExpand}
         reminders={reminders.filter(({ date }) => compareDates(date, calendarItemDate))}
         date={calendarItemDate} 
@@ -76,10 +77,21 @@ ReminderForm.propTypes = {
     title: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
     date: PropTypes.instanceOf(Date).isRequired,
-    city: PropTypes.string.isRequired
+    id: PropTypes.number.isRequired,
+    city: PropTypes.oneOfType([
+      PropTypes.string.isRequired,
+      PropTypes.shape({
+        description: PropTypes.string.isRequired,
+        location: PropTypes.shape({
+          lat: PropTypes.number.isRequired,
+          lng: PropTypes.number.isRequired,
+        }).isRequired
+      }),
+    ]),
   })).isRequired,
 
   handleDayExpand: PropTypes.func.isRequired,
+  deleteReminder: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(ReminderForm);
